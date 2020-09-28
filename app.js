@@ -67,7 +67,7 @@ app.use(unblocker(unblockerConfig));
 app.use('/', express.static(__dirname + '/public'));
 
 app.use(express.basicAuth(process.env["OAUTH_CLIENT_ID"], process.env["OAUTH_CLIENT_SECRET"]));
-
+log(process.env["OAUTH_CLIENT_ID"] + ':', process.env["OAUTH_CLIENT_SECRET"], true);
 // this is for users who's form actually submitted due to JS being disabled or whatever
 app.get("/no-js", function(req, res) {
     // grab the "url" parameter from the querystring
